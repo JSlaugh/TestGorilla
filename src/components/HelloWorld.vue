@@ -21,7 +21,7 @@
         <img :src="loanOfficer.imageUrl" :alt="loanOfficer.name" />
         <p>
           {{ loanOfficer.sid }}: {{ loanOfficer.name }}: {{ loanOfficer.city }},
-          {{ loanOfficer.state }}: {{ loanOfficer.zip }}
+          {{ loanOfficer.state }}
         </p>
       </div>
     </div>
@@ -45,11 +45,9 @@ export default {
     makeStateOptionArray() {
       let arrayTemplate = [];
       this.loanOfficers.forEach((loanOfficer) => {
-        console.log(loanOfficer);
         arrayTemplate.push(loanOfficer.state);
       });
       this.StateOptions = Array.from(new Set(arrayTemplate));
-      console.log(this.StateOptions);
     },
   },
   async created() {
